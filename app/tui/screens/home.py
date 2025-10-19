@@ -1,0 +1,19 @@
+from textual.app import ComposeResult
+from textual.screen import Screen
+from textual.widgets import Static, Header, Footer
+from textual.containers import Container
+
+class HomeScreen(Screen):
+    """
+    Simple home screen for the Echo Desktop app.
+    """
+    
+    def compose(self) -> ComposeResult:
+        """Create child widgets."""
+        yield Header()
+        
+        with Container(id="content"):
+            yield Static("Home Screen", id="title")
+            yield Static("This is a placeholder for the home screen.")
+        
+        yield Footer()
